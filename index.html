@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Informe de Acompañamiento Empresas</title>
+</head>
+<body>
+  <header>
+    <!-- Debe ser ignorado por el PDF -->
+    <div class="header-title0">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menú">
+        ☰
+      </button>
+      <nav class="menu-panel" id="menuPanel">
+        <a href="https://www.proteccion.com/contenidos/personas/" target="_blank" rel="noopener noreferrer">Inicio Protección</a>
+        <a href="https://apolo.proteccion.com.co/#" target="_blank" rel="noopener noreferrer">Apolo</a>
+        <a href="https://crmproteccion.lightning.force.com/lightning/page/home" target="_blank" rel="noopener noreferrer">Salesforce</a>
+        <a href="https://odin.proteccion.com.co:1010/" target="_blank" rel="noopener noreferrer">ODIN</a>
+        <a href="https://afpcore.proteccion.com.co/PrevisionaWEB/login.seam?salir=t&cid=612" target="_blank" rel="noopener noreferrer">AFP Core</a>
+        <a href="https://proteccionsmart.adminfo.net/smartplus/" target="_blank" rel="noopener noreferrer">Adminfo Smart+</a>
+        <a href="https://gestorplanillas.proteccion.com.co:8650/" target="_blank" rel="noopener noreferrer">Gestor de planillas</a>
+        <a href="carga_base.html">Cargar Base de Datos</a>
+        <a href="https://teams.microsoft.com/l/chat/0/0?users=cesar.martinez@proteccion.com.co" target="_blank" rel="noopener noreferrer">Soporte</a>
+        <a href="excel_a_json.html" rel="noopener noreferrer">Convertir Excel a .json</a>
+      </nav>
+    </div>
+<!--------------------------------------------------------->
+    <div class="header-title1">
+      <h1>Informe de Acompañamiento Empresas</h1>
+    </div>
+
+    <div class="header-title2">
+  <a href="https://www.proteccion.com/contenidos/personas/" target="_blank" class="logo-link">
+    <h2>Protección</h2>
+  </a>
+
+  <div class="bloque_logo">
+    <p>Una empresa</p>
+    <img src="img/sura-logo-azul.png" alt="Logo_sura">
+  </div>
+</div>
+  </header>
+
+    <main>
+        <section class="info_basica">
+          <h3>INFORMACIÓN BÁSICA</h3>
+          <div class="info_basica_recuadro">
+
+            <div class="form-group form-group-small">
+              <label for="fecha">Fecha de Acompañamiento</label>
+              <input type="date" id="fecha" name="fecha" class="form-input">
+            </div>
+
+            <div class="form-group form-group-small">
+              <label for="nit">NIT</label>
+              <input type="text" id="nit" name="nit" class="form-input" placeholder="Ej: 800123456">
+            </div>
+
+            <div class="form-group form-group-large">
+              <label for="empresa">Razón Social</label>
+              <input type="text" id="empresa" name="empresa" class="form-input" readonly placeholder="Digite el Nit para cargar la razón social...">
+            </div>
+
+            <div class="asesor-alerta-row">
+              <div class="form-group">
+                <label for="asesor">Asesor Comercial</label>
+                <input type="text" id="asesor" name="asesor" class="form-input" placeholder="Digite el Nit para cargar el nombre del asesor comercial...">
+              </div>
+              <div class="form-group no-pdf">
+                <label for="alertaCiclo">Alerta Ciclo Cobro UGPP</label>
+                <input type="text" id="alertaCiclo" name="alertaCiclo" class="form-input alerta-ciclo-input" readonly placeholder="Digite el Nit para cargar la alerta registrada">
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <section class="info_basica">
+            <h3>ASISTENTES</h3>
+            <div class="info_basica_recuadro2"> 
+                <div class="form-group form-group-large">
+                    <label for="representante">Contactos Empresa (Nombre, Tipo y Número de ID, Correo y/o Teléfono de Contacto y Subtipo de Relación)</label>
+                    <textarea id="representante" name="representante" class="form-input" rows="3" placeholder="Digite aqui la información..."></textarea>
+                </div>
+                <div class="ejecutivo">
+                    <div class="form-group form-group-large">
+                      <label for="nombreEjecutivo">Ejecutivo Asistencia Empresarial Protección</label>
+                      <input type="text" id="nombreEjecutivo" name="nombreEjecutivo" class="form-input" placeholder="Nombre del ejecutivo...">
+                    </div>
+                    <div class="form-group form-group-large">
+                        <label for="emailEjecutivo">E-mail Ejecutivo</label>
+                        <input type="email" id="emailEjecutivo" name="emailEjecutivo" class="form-input" placeholder="Correo electrónico">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- ============================================ -->
+<!-- LISTA DE VERIFICACIÓN -->
+<!-- ============================================ -->
+<section class="info_basica">
+  <h3>LISTA DE VERIFICACIÓN</h3>
+  <div class="info_basica_recuadro2">
+    <!-- ===================== --> 
+<!-- GESTIÓN DE DEUDAS PO -->
+<!-- ===================== -->
+<div class="check-bloque">
+  <div class="check-header">
+    <strong>GESTIÓN DE DEUDAS (PO)</strong>
+  </div>
+
+  <div class="check-contenido" id="deudaContenido">
+
+    <div class="check-item">
+      <label>
+        <input type="checkbox" class="subcheck" id="checkDeudaPresunta" />
+        Deuda Presunta
+      </label>
+      <input type="text" class="valor-input moneda" id="valorDeudaPresunta" placeholder="$ 0">
+    </div>
+    <textarea id="obsDeudaPresunta" class="check-textarea" placeholder="Observación..."></textarea>
+
+    <div class="check-item">
+      <label>
+        <input type="checkbox" class="subcheck" id="checkDeudaReal" />
+        Deuda Real
+      </label>
+      <input type="text" class="valor-input moneda" id="valorDeudaReal" placeholder="$ 0">
+    </div>
+    <textarea id="obsDeudaReal" class="check-textarea" placeholder="Observación..."></textarea>
+
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- GESTIÓN DE INCONSISTENCIAS PO, PV Y CES -->
+<!-- ======================================== -->
+<div class="check-bloque">
+  <div class="check-header">
+    <strong>GESTIÓN DE INCONSISTENCIAS (PO, PV Y CES)</strong>
+  </div>
+
+  <div class="check-contenido" id="inconsistenciasContenido">
+
+    <div class="check-item">
+      <label>
+        <input type="checkbox" class="subcheck" id="checkPagosPO" />
+        Pagos sin planilla (PO)
+      </label>
+      <input type="text" class="valor-input moneda" id="valorPagosPO" placeholder="$ 0">
+    </div>
+    <textarea id="obsPagosPO" class="check-textarea" placeholder="Observación..."></textarea>
+
+    <div class="check-item">
+      <label>
+        <input type="checkbox" class="subcheck" id="checkAportesPO" />
+        Rezagos sin Acreditar (PO)
+      </label>
+      <input type="text" class="valor-input moneda" id="valorAportesPO" placeholder="$ 0">
+    </div>
+    <textarea id="obsAportesPO" class="check-textarea" placeholder="Observación..."></textarea>
+
+    <div class="check-item">
+      <label>
+        <input type="checkbox" class="subcheck" id="checkPagosCES" />
+        Pagos sin planilla (CES)
+      </label>
+      <input type="text" class="valor-input moneda" id="valorPagosCES" placeholder="$ 0">
+    </div>
+    <textarea id="obsPagosCES" class="check-textarea" placeholder="Observación..."></textarea>
+
+    <div class="check-item">
+      <label>
+        <input type="checkbox" class="subcheck" id="checkPagosPV" />
+        Pagos sin planilla (PV)
+      </label>
+      <input type="text" class="valor-input moneda" id="valorPagosPV" placeholder="$ 0">
+    </div>
+    <textarea id="obsPagosPV" class="check-textarea" placeholder="Observación..."></textarea>
+
+    <div class="check-item">
+      <label>
+        <input type="checkbox" class="subcheck" id="checkAportesPV" />
+        Rezagos sin Acreditar (PV)
+      </label>
+      <input type="text" class="valor-input moneda" id="valorAportesPV" placeholder="$ 0">
+    </div>
+    <textarea id="obsAportesPV" class="check-textarea" placeholder="Observación..."></textarea>
+
+  </div>
+</div>
+<br>
+    <!-- ===================== -->
+    <!-- CANALES DIGITALES -->
+    <!-- ===================== -->
+    <div class="check-bloque">
+      <div class="check-header">
+        <strong>CANALES DIGITALES</strong>
+      </div>
+
+      <div class="canales-container" style="padding: 20px 0; border: none; background: none;">
+        <!-- Primera fila: Clave Empresarial -->
+        <div class="canal-row">
+          <div class="canal-item">
+            <span class="canal-label">Clave Empresarial Portal WEB</span>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="claveEmpresarial" value="si" class="radio-input">
+                <span>SI</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="claveEmpresarial" value="no" class="radio-input">
+                <span>NO</span>
+              </label>
+            </div>
+          </div>
+          <div class="observacion-item">
+            <label for="obsClaveEmpresarial">Observaciones</label>
+            <textarea id="obsClaveEmpresarial" name="obsClaveEmpresarial" class="observacion-input" rows="2" placeholder="Asignación, Actualización, Eliminación..."></textarea>
+          </div>
+        </div>
+
+        <!-- Segunda fila: Asesoría General -->
+        <div class="canal-row">
+          <div class="canal-item">
+            <span class="canal-label">Asesoría General Portal WEB</span>
+          </div>
+          <div class="observacion-item">
+            <label for="obsAsesoriaGeneral">Observaciones</label>
+            <textarea id="obsAsesoriaGeneral" name="obsAsesoriaGeneral" class="observacion-input" rows="2" placeholder="Ya Pagaste, Líquide y pague CES - PV, retiros y aprobación CES, consolidaciones PV, seguimiento a tramites de pensión, certificados, etc..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================== -->
+    <!-- ACTUALIZACIÓN DE DATOS -->
+    <!-- ========================== -->
+    <div class="check-bloque">
+      <div class="check-header">
+        <strong>Actualización de datos en APOLO</strong>
+      </div>
+      <div class="radio-group" style="padding-top: 10px;">
+        <label class="radio-label">
+          <input type="radio" name="actualizacionDatos" value="si" class="radio-input">
+          <span>SI</span>
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="actualizacionDatos" value="no" class="radio-input">
+          <span>NO</span>
+        </label>
+      </div>
+    </div>
+<br>
+    <!-- ================================ -->
+    <!-- CASOS PENDIENTES DE GESTIÓN (PQR) -->
+    <!-- ================================ -->
+    <div class="check-bloque">
+      <label class="check-header">
+        <input type="checkbox" id="checkCasosPendientes" onchange="toggleObservacion('checkCasosPendientes', 'obsCasosPendientes')">
+        CASOS PENDIENTES DE GESTIÓN (PQR)
+      </label>
+      <textarea id="obsCasosPendientes" class="check-textarea" placeholder="Escriba sus observaciones aquí..."></textarea>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CONCLUSIONES (NUEVA SECCIÓN) -->
+<!-- ============================================ -->
+<section class="info_basica">
+  <h3>CONCLUSIONES</h3>
+  <div class="info_basica_recuadro2">
+
+    <!-- Compromisos Empleador -->
+    <div class="check-bloque">
+      <label class="check-header">
+        <input type="checkbox" id="checkCompromisosEmpleador" onchange="toggleObservacion('checkCompromisosEmpleador', 'obsCompromisosEmpleador')">
+        Compromisos Empleador
+      </label>
+      <textarea id="obsCompromisosEmpleador" class="check-textarea" placeholder="Escriba sus observaciones aquí..."></textarea>
+    </div>
+
+    <!-- Compromisos Protección -->
+    <div class="check-bloque">
+      <label class="check-header">
+        <input type="checkbox" id="checkCompromisosProteccion" onchange="toggleObservacion('checkCompromisosProteccion', 'obsCompromisosProteccion')">
+        Compromisos Protección
+      </label>
+      <textarea id="obsCompromisosProteccion" class="check-textarea" placeholder="Escriba sus observaciones aquí..."></textarea>
+    </div>
+<br>
+    <!-- Agendamiento -->
+    <div class="check-bloque">
+      <div class="check-header" style="margin-bottom: 12px;">
+        <strong>Nuevo Agendamiento</strong>
+      </div>
+      
+      <div class="radio-group" style="margin-bottom: 20px;">
+        <label class="radio-label">
+          <input type="radio" name="proximoEncuentro" value="si" class="radio-input">
+          <span>SÍ</span>
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="proximoEncuentro" value="no" class="radio-input" checked>
+          <span>NO</span>
+        </label>
+      </div>
+
+      <div id="proximoObservacionContainer" class="proximo-obs">
+        <label for="obsProximoEncuentro">
+          Detalle del próximo encuentro / observaciones
+        </label>
+        <textarea 
+          id="obsProximoEncuentro" 
+          class="observacion-input" 
+          placeholder="Fecha tentativa, lugar/medio, hora aproximada, temas principales, responsable..."
+          rows="3"
+         
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Encuesta de Satisfacción + Caso Salesforce -->
+    <div class="check-bloque encuesta-salesforce-row">
+
+      <div class="encuesta-bloque">
+        <div class="check-header" style="margin-bottom: 12px;">
+          <strong>¿El empleador contestó la encuesta de satisfacción?</strong>
+        </div>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="encuestaSatisfaccion" value="si" class="radio-input">
+            <span>SÍ</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="encuestaSatisfaccion" value="no" class="radio-input">
+            <span>NO</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="salesforce-bloque">
+        <label class="check-header" for="casoSalesforce" style="display:block; margin-bottom: 8px;">
+          <strong>Caso Salesforce</strong>
+        </label>
+        <input
+          type="text"
+          id="casoSalesforce"
+          name="casoSalesforce"
+          class="form-input salesforce-input"
+          placeholder="Ej: SER - 00000000"
+          maxlength="20"
+          oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9\- ]/g, '')"
+        >
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="firmas">
+  <div class="grupo_firmas">
+        <div class="firmas1"></div>
+        <div class="firmas2">
+          <div class="firmaA">
+          <p>* Firma Ejecutivo AE</p>
+          </div>
+          <div class="firmaB">
+          <p>* Firma Contacto Emp.</p>
+        </div>
+  </div>
+    <p><strong>* la firma del documento es opcional</strong></p>
+  </div>
+  <div id="pdf-fin"></div>
+</section>
+
+<!-- SECCIÓN DE BOTONES DE ACCIÓN -->
+<section class="info_basica">
+    <div class="botones-container">
+        <div class="botones-principales">
+            <button type="button" class="btn btn-guardar" onclick="recuperarInformacion()">
+                Recuperar
+            </button>
+            <button type="button" class="btn btn-excel" onclick="descargarExcel()">
+                Descargar Excel
+            </button>    
+            <button type="button" class="btn btn-pdf" onclick="generarPDF()">
+                Generar PDF
+            </button>
+            <button type="button" class="btn btn-limpiar" onclick="limpiarFormulario()">
+                Limpiar Formulario
+            </button>
+
+        </div>
+        <div class="boton-separado">
+            <button type="button" class="btn btn-borrar" onclick="borrarDatos()">
+                Borrar Datos Excel
+            </button>
+        </div>
+    </div>
+</section>
+
+    </main>
+    <div id="live2d-widget" style="display:none;"></div>
+    <div id="easterText" class="easter-text hidden"></div>
+    <button id="btnTop" title="Volver arriba">⬆</button>
+
+    <footer>
+        <div class="footer-contenedor">
+          
+          <div class="footer-izquierda">
+            <a href="https://www.proteccion.com/contenidos/personas/" target="_blank" class="footer-link">
+              <h2 class="footer-logo1">Protección</h2>
+            </a>
+
+            <div class="bloque_logo_footer">
+              <p>Una empresa</p>
+              <img src="img/sura-logo-blanco.png" alt="Logo_sura">
+            </div>
+          </div>
+
+          <div class="footer-centro">
+            <a href="https://hyoga1023.github.io/Portafolio/"><img src="img/logo_letra_blanca_sin_fondo.png" alt="Logo desarrollador"></a>
+            <p>&copy; 2026 Desarrollada por Cesar Martinez. Todos los derechos reservados.</p>
+          </div>
+
+          <div class="footer-derecha">
+            <a href="https://www.facebook.com/proteccionsa/?locale=es_LA" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/proteccionsa/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/proteccionsa/posts/?feedView=all" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://x.com/proteccion?lang=es" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+
+        </div>
+     </footer>
+
+<div class="bajo_footer"></div>
+    <div class="bajo_footer"></div>
+    <script src="https://unpkg.com/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
+    <script src="easterEggLive2D.js"></script>
+    <script src="easterEggNit.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="check.js"></script>
+    <script src="observaciones.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="orden_documentos.js"></script>
+    <script src="botones_finales.js"></script>
+    <script src="hamburguesa.js"></script>
+    <script src="autocompletar.js"></script>
+    <script src="btnTop.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetAlert2.js"></script>
+    <script src="fecha.js"></script>
+    <script src="autosave.js"></script>
+    <script src="limpiar.js"></script>
+    <script src="mobile_block.js"></script>
+</body>
+</html>
