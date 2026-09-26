@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>README Técnico</title>
+    <style>
+        .doc-container{
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+        .doc-container h2{
+            color: var(--color-2);
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--color-1);
+            padding-bottom: 6px;
+        }
+        .doc-container h2:first-of-type{ margin-top: 0; }
+        .doc-container p{
+            color: var(--color-2);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        .doc-container ul{
+            color: var(--color-2);
+            line-height: 1.8;
+            padding-left: 22px;
+            margin-bottom: 14px;
+        }
+        .doc-container code{
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .doc-container table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+        }
+        .doc-container th, .doc-container td{
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+            font-size: 0.9rem;
+            color: var(--color-2);
+        }
+        .doc-container th{
+            background: var(--color-1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title0">
+            <a href="index.html"><button class="hamburger" id="hamburgerBtn" aria-label="Menú">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button></a>
+            <a href="index.html" style="text-decoration: none; font-family:'Ubuntu', sans-serif; font-size: 1.3rem; font-weight: 500;"><h2>Volver</h2></a>
+        </div>
+        <div class="header-title2">
+            <a href="https://www.proteccion.com/contenidos/personas/" target="_blank" class="logo-link">
+                <h2>Protección</h2>
+            </a>
+            <div class="bloque_logo">
+                <p>Una empresa</p>
+                <img src="img/sura-logo-azul.png" alt="Logo_sura">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="doc-container">
+            <h1 style="color:var(--color-2); text-align:center; margin-bottom: 6px;">README Técnico</h1>
+            <p style="text-align:center; color:#555; font-style:italic; margin-bottom: 20px;">
+                Sistema de Registro de Mesas de Trabajo — Asistencia Empresarial
+            </p>
+
+            <h2>Descripción</h2>
+            <p>Herramienta web para la estandarización del registro de las mesas de trabajo entre los ejecutivos de Asistencia Empresarial y los empleadores asignados, con generación automática de Excel histórico y acta en PDF.</p>
+
+            <h2>Requisitos</h2>
+            <ul>
+                <li>Navegador web moderno (Chrome, Edge o Firefox).</li>
+                <li>Conexión a internet, únicamente para la carga de librerías externas vía CDN.</li>
+                <li>No requiere instalación, servidor propio ni permisos de administrador.</li>
+            </ul>
+
+            <h2>Uso básico</h2>
+            <ul>
+                <li>Ingresar al enlace de la aplicación desde el navegador.</li>
+                <li>Diligenciar la información de la mesa de trabajo en el formulario principal.</li>
+                <li>Descargar el Excel histórico (paso obligatorio antes del siguiente).</li>
+                <li>Generar el acta en PDF.</li>
+                <li>Para cargar o actualizar la base de empleadores, usar el módulo "Cargar Base de Datos".</li>
+                <li>Para generar dicha base desde un Excel, usar el conversor "Excel a JSON".</li>
+            </ul>
+
+            <h2>Estructura de archivos</h2>
+            <table>
+                <tr><th>Archivo</th><th>Función</th></tr>
+                <tr><td><code>index.html</code></td><td>Formulario principal de registro de mesas de trabajo</td></tr>
+                <tr><td><code>carga_base.html</code></td><td>Carga de la base de datos de empleadores</td></tr>
+                <tr><td><code>excel_a_json.html</code></td><td>Conversor de Excel a JSON</td></tr>
+                <tr><td><code>styles.css</code></td><td>Hoja de estilos general</td></tr>
+                <tr><td><code>autocompletar.js</code></td><td>Autocompletado de datos por NIT</td></tr>
+                <tr><td><code>check.js</code></td><td>Validaciones y formato de campos</td></tr>
+                <tr><td><code>autosave.js</code></td><td>Autoguardado y recuperación</td></tr>
+                <tr><td><code>orden_documentos.js</code></td><td>Candado: Excel obligatorio antes del PDF</td></tr>
+                <tr><td><code>botones_finales.js</code></td><td>Generación del Excel histórico y el acta en PDF</td></tr>
+                <tr><td><code>carga-empleadores.js</code></td><td>Carga del JSON de empleadores al almacenamiento local</td></tr>
+                <tr><td><code>excel_a_json.js</code></td><td>Lógica de conversión y validación por campo</td></tr>
+                <tr><td><code>mobile_block.js</code></td><td>Bloqueo de acceso desde dispositivos móviles</td></tr>
+            </table>
+
+            <h2>Almacenamiento</h2>
+            <p>Toda la información se guarda localmente en el navegador mediante IndexedDB (a través de la librería localForage); no se transmite a servidores externos ni a la nube.</p>
+
+            <h2>Soporte</h2>
+            <p>Para dudas, incidencias o solicitudes de mejora, comuníquese con el desarrollador de la herramienta a través del canal de soporte definido por el equipo de Asistencia Empresarial.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-contenedor">
+          
+          <div class="footer-izquierda">
+            <a href="https://www.proteccion.com/contenidos/personas/" target="_blank" class="footer-link">
+              <h2 class="footer-logo1">Protección</h2>
+            </a>
+
+            <div class="bloque_logo_footer">
+              <p>Una empresa</p>
+              <img src="img/sura-logo-blanco.png" alt="Logo_sura">
+            </div>
+          </div>
+
+          <div class="footer-centro">
+            <a href="https://hyoga1023.github.io/Portafolio/"><img src="img/logo_letra_blanca_sin_fondo.png" alt="Logo desarrollador"></a>
+            <p>&copy; 2026 Desarrollada por Cesar Martinez. Todos los derechos reservados.</p>
+          </div>
+
+          <div class="footer-derecha">
+            <a href="https://www.facebook.com/proteccionsa/?locale=es_LA" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/proteccionsa/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/proteccionsa/posts/?feedView=all" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://x.com/proteccion?lang=es" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+
+        </div>
+     </footer>
+    <div class="bajo_footer"></div>
+    <script src="mobile_block.js"></script>
+</body>
+</html>

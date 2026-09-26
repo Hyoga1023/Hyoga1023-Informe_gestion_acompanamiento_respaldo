@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Manual de Usuario</title>
+    <style>
+        .doc-container{
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+        .doc-container h2{
+            color: var(--color-2);
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--color-1);
+            padding-bottom: 6px;
+        }
+        .doc-container h2:first-of-type{ margin-top: 0; }
+        .doc-container p{
+            color: var(--color-2);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        .doc-container ol, .doc-container ul{
+            color: var(--color-2);
+            line-height: 1.8;
+            padding-left: 22px;
+            margin-bottom: 14px;
+        }
+        .doc-container .nota{
+            background: rgba(223,202,14,0.15);
+            border-left: 4px solid var(--color-1);
+            padding: 10px 16px;
+            border-radius: 6px;
+            margin: 14px 0;
+        }
+        .doc-container code{
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title0">
+            <a href="index.html"><button class="hamburger" id="hamburgerBtn" aria-label="Menú">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button></a>
+            <a href="index.html" style="text-decoration: none; font-family:'Ubuntu', sans-serif; font-size: 1.3rem; font-weight: 500;"><h2>Volver</h2></a>
+        </div>
+        <div class="header-title2">
+            <a href="https://www.proteccion.com/contenidos/personas/" target="_blank" class="logo-link">
+                <h2>Protección</h2>
+            </a>
+            <div class="bloque_logo">
+                <p>Una empresa</p>
+                <img src="img/sura-logo-azul.png" alt="Logo_sura">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="doc-container">
+            <h1 style="color:var(--color-2); text-align:center; margin-bottom: 6px;">Manual de Usuario</h1>
+            <p style="text-align:center; color:#555; font-style:italic; margin-bottom: 20px;">
+                Informe de Acompañamiento Empresas — Asistencia Empresarial
+            </p>
+
+            <h2>1. Requisitos previos</h2>
+            <p>Para utilizar la herramienta solo se necesita un navegador web moderno (Google Chrome, Microsoft Edge o Mozilla Firefox) y conexión a internet. No se requiere instalación ni permisos de administrador.</p>
+
+            <h2>2. Registrar una mesa de trabajo</h2>
+            <ol>
+                <li>Ingrese la fecha de acompañamiento (se carga automáticamente con la fecha del día).</li>
+                <li>Digite el NIT del empleador. Si la base de datos ya fue cargada previamente, los campos de <b>Razón Social</b>, <b>Asesor Comercial</b> y los valores de gestión (deudas, rezagos, alerta de ciclo de cobro) se autocompletarán.</li>
+                <li>Complete la información de asistentes, gestión de deudas, canales digitales, compromisos y agendamiento según lo tratado en la reunión.</li>
+                <li>El formulario se guarda automáticamente mientras usted trabaja (autoguardado), por lo que no es necesario preocuparse por pérdida de información ante un cierre accidental.</li>
+            </ol>
+            <div class="nota">
+                <b>Nota:</b> si necesita retomar un registro guardado automáticamente, use el botón <b>Recuperar</b> al final del formulario.
+            </div>
+
+            <h2>3. Generar los documentos de la mesa de trabajo</h2>
+            <p>El orden es obligatorio y no se puede alterar:</p>
+            <ol>
+                <li><b>Primero, descargar el Excel</b> con el botón <code>Descargar Excel</code>. Este paso consolida el registro en el histórico del equipo y habilita el siguiente paso.</li>
+                <li><b>Luego, generar el acta en PDF</b> con el botón <code>Generar PDF</code>. Este documento puede firmarse de forma digital o impresa, tanto por el ejecutivo como por el representante del empleador.</li>
+            </ol>
+            <div class="nota">
+                Si intenta generar el PDF antes de descargar el Excel, el sistema se lo impedirá y le indicará que primero debe completar la descarga del Excel.
+            </div>
+
+            <h2>4. Cargar o actualizar la base de datos de empleadores</h2>
+            <p>Desde el menú principal, seleccione <b>Cargar Base de Datos</b>. Allí podrá subir el archivo <code>.json</code> con la información de los empleadores asignados. Una vez cargado, el sistema mostrará la cantidad de empleadores registrados y la fecha de la carga.</p>
+
+            <h2>5. Convertir un Excel a formato JSON</h2>
+            <p>Si cuenta con la información de empleadores en un archivo Excel, use la opción <b>Convertir Excel a .json</b> del menú. El sistema validará los datos (formato de NIT, valores monetarios, alertas de ciclo de cobro) y le permitirá descargar el archivo <code>.json</code> resultante, listo para cargarlo en el paso anterior.</p>
+
+            <h2>6. Preguntas frecuentes</h2>
+            <p><b>¿Qué pasa si borro el formulario por error?</b> Puede usar el botón <b>Limpiar Formulario</b> para reiniciar, o <b>Recuperar</b> para restaurar el último autoguardado.</p>
+            <p><b>¿Dónde queda guardada la información?</b> Toda la información se almacena localmente en su equipo (no se envía a internet ni a servidores externos), por lo que es importante conservar los archivos Excel descargados como respaldo.</p>
+            <p><b>¿Puedo usar la aplicación desde el celular?</b> No. La herramienta está diseñada exclusivamente para equipos de escritorio o portátil, dado el volumen de información que maneja y por razones de seguridad de la información.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-contenedor">
+          
+          <div class="footer-izquierda">
+            <a href="https://www.proteccion.com/contenidos/personas/" target="_blank" class="footer-link">
+              <h2 class="footer-logo1">Protección</h2>
+            </a>
+
+            <div class="bloque_logo_footer">
+              <p>Una empresa</p>
+              <img src="img/sura-logo-blanco.png" alt="Logo_sura">
+            </div>
+          </div>
+
+          <div class="footer-centro">
+            <a href="https://hyoga1023.github.io/Portafolio/"><img src="img/logo_letra_blanca_sin_fondo.png" alt="Logo desarrollador"></a>
+            <p>&copy; 2026 Desarrollada por Cesar Martinez. Todos los derechos reservados.</p>
+          </div>
+
+          <div class="footer-derecha">
+            <a href="https://www.facebook.com/proteccionsa/?locale=es_LA" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/proteccionsa/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/proteccionsa/posts/?feedView=all" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://x.com/proteccion?lang=es" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+
+        </div>
+     </footer>
+    <div class="bajo_footer"></div>
+    <script src="mobile_block.js"></script>
+</body>
+</html>
